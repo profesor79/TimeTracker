@@ -12,6 +12,7 @@ public sealed class ConsoleActor : ReceiveActor
         {
             _log.Info("Received: {0}", _);
             Sender.Tell(_);
+            Console.WriteLine("request finished");
         });
     }
 }
