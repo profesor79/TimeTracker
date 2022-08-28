@@ -4,10 +4,7 @@ using Akka.Cluster.Hosting;
 using Akka.Hosting;
 using Akka.Remote.Hosting;
 using TimeTracker;
-using Petabridge.Cmd.Cluster;
-using Petabridge.Cmd.Cluster.Sharding;
-using Petabridge.Cmd.Host;
-using Petabridge.Cmd.Remote;
+using TimeTracker.Actors.TimeSignature;
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
@@ -32,18 +29,12 @@ builder.Services.AddAkka(akkaConfig.ActorSystemName, (builder, provider) =>
             Roles = akkaConfig.Roles?.ToArray() ?? Array.Empty<string>(),
             SeedNodes = akkaConfig.SeedNodes?.Select(Address.Parse).ToArray() ?? Array.Empty<Address>()
         })
-        .AddPetabridgeCmd(cmd =>
-        {
-            cmd.RegisterCommandPalette(new RemoteCommands());
-            cmd.RegisterCommandPalette(ClusterCommands.Instance);
-
-            // sharding commands, although the app isn't configured to host any by default
-            cmd.RegisterCommandPalette(ClusterShardingCommands.Instance);
-        })
         .WithActors((system, registry) =>
         {
+            ActorSystemRefernce.System = system;
             var consoleActor = system.ActorOf(Props.Create(() => new ConsoleActor()), "console");
             registry.Register<ConsoleActor>(consoleActor);
+
         });
 });
 
@@ -53,7 +44,7 @@ app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
-    
+
     endpoints.MapGet("/", async (HttpContext context, ActorRegistry registry) =>
     {
         var reporter = registry.Get<ConsoleActor>();

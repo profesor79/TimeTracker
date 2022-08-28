@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker", "src\TimeTracker\TimeTracker.csproj", "{6186C854-8B2C-4102-8D7A-4B74A61CC91F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Tests", "src\TimeTracker.Tests\TimeTracker.Tests.csproj", "{0F03312C-5BCB-480F-8C48-30F7EDEDA3D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Actor.Tests", "src\TimeTracker.Tests\TimeTracker.Actor.Tests.csproj", "{0F03312C-5BCB-480F-8C48-30F7EDEDA3D5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{957AA980-76E5-4F68-9A13-9DC8764610C0}"
 EndProject
@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		RELEASE_NOTES.md = RELEASE_NOTES.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.WebApi.Tests", "src\TimeTracker.WebApi.Tests\TimeTracker.WebApi.Tests.csproj", "{3720A280-581A-4835-9A58-E40ACBF90657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorSystem", "src\ActorSystem\ActorSystem.csproj", "{2416A62B-1C07-48FD-A1F7-06FF6C347A32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,14 @@ Global
 		{0F03312C-5BCB-480F-8C48-30F7EDEDA3D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{957AA980-76E5-4F68-9A13-9DC8764610C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{957AA980-76E5-4F68-9A13-9DC8764610C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3720A280-581A-4835-9A58-E40ACBF90657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3720A280-581A-4835-9A58-E40ACBF90657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3720A280-581A-4835-9A58-E40ACBF90657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3720A280-581A-4835-9A58-E40ACBF90657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2416A62B-1C07-48FD-A1F7-06FF6C347A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2416A62B-1C07-48FD-A1F7-06FF6C347A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2416A62B-1C07-48FD-A1F7-06FF6C347A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2416A62B-1C07-48FD-A1F7-06FF6C347A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

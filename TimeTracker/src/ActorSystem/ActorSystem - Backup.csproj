@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>$(NetCoreFramework)</TargetFramework>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<OutputType>Exe</OutputType>
+		<OutputType>Dll</OutputType>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
@@ -16,15 +16,15 @@
 
 	<ItemGroup>
 		<PackageReference Include="Akka.Cluster.Hosting" Version="$(AkkaHostingVersion)" />
-		<PackageReference Include="Akka.DI.Core" Version="1.4.40" />
+		<PackageReference Include="Akka.DI.AutoFac" Version="1.4.27" />
+		<PackageReference Include="Autofac" Version="6.4.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="$(MicrosoftExtensionsVersion)" />
 		<PackageReference Include="Akka.Cluster" Version="$(AkkaVersion)" />
 		<PackageReference Include="Akka.DependencyInjection" Version="$(AkkaVersion)" />
 		<PackageReference Include="Akka.HealthCheck.Cluster" Version="$(AkkaHealthCheckVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="$(MicrosoftExtensionsVersion)" />
-
-
-
+		<PackageReference Include="MvcSiteMapProvider.MVC5.DI.Autofac" Version="4.6.26" />
+		<PackageReference Include="Serilog" Version="2.11.0" />
 	</ItemGroup>
 
 </Project>

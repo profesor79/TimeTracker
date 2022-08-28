@@ -4,7 +4,7 @@
     {
         public TimeSignatureDBO Store(DateTime datetime)
         {
-            return null;
+            return new TimeSignatureDBO(datetime, Guid.NewGuid());
         }
     }
 }
